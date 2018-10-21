@@ -1,0 +1,13 @@
+name: crystal-image-host
+version: 0.1.0
+
+authors:
+  - D. Scott Boggs <scott@tams.tech>
+
+targets:
+  crystal-image-host:
+    main: src/crystal-image-host.cr
+
+crystal: 0.26.1
+
+license: MIT
