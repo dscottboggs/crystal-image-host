@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Crystal image host</title>
+    </head>
+    <body>
+        <img src="/img/<%= for_id %>" alt="Image at <%= for_id %> not found.">
+        <form class="share-links" action="#">
+            <label for="link">Link: </label>
+            <input type="text"
+                   name="link"
+                   value="https://<%= to.request.host_with_port %>/img/<%= for_id %>"
+                   id="link"
+                   readonly=true>
+            <label for="embed">Embed: </label>
+            <input type="text"
+                   name="link"
+                   value="<img src=&quot;/img/<%= for_id %>&quot; alt=&quot;Image at <%= for_id %> not found.&quot;>"
+                   id="link"
+                   readonly=true>
+        </form>
+    </body>
+</html>

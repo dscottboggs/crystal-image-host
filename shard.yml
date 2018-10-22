@@ -8,6 +8,10 @@ targets:
   crystal-image-host:
     main: src/crystal-image-host.cr
 
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
 crystal: 0.26.1
 
 license: MIT

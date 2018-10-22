@@ -4,10 +4,10 @@ module ImageHost
     getter? mime_type : String
     getter filename : String
     def initialize
-      @filepath = File.join IMAGE_DIR, generate_filename
+      @filepath = File.join image_dir, generate_filename
     end
     def initialize(@filename)
-      @filepath = File.join IMAGE_DIR, filename
+      @filepath = File.join image_dir, filename
     end
 
     def set_mime_type
@@ -43,6 +43,18 @@ module ImageHost
     end
 
     def self.from_context(ctx)
+      if (res = self.from_context? ctx).nil?
+        logger.warn "got no body on upload"
+        ctx.response.respond_with_error "image upload needed", 400
+      else
+        res
+      end
+    rescue e
+      logger.error e
+      ctx.respond_with_error
+    end
+
+    def self.from_context!(ctx)
       self.from_context?(ctx) || raise ImageHost::EmptyBody.new ctx
     end
 
