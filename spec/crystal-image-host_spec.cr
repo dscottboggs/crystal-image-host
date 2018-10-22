@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Crystal::Image::Host do
+describe ImageHost do
   # TODO: Write tests
 
   it "works" do

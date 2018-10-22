@@ -1,6 +1,6 @@
-# TODO: Write documentation for `Crystal::Image::Host`
-module Crystal::Image::Host
+# TODO: Write documentation for `ImageHost`
+module ImageHost
   VERSION = "0.1.0"
-
-  # TODO: Put your code here
+  PROCESSING = 102
+  logger = Logger.new Logger::DEBUG
 end
